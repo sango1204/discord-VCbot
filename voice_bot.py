@@ -4,6 +4,10 @@ from discord.ext import commands
 
 # 動作確認用 
 print("OK")
+# ここに自分の Bot トークンを貼り付けてください（"..."の部分）
+TOKEN = os.getenv("DISCORD_TOKEN")
+print("TOKEN:", TOKEN)  # ← デバッグ用。動作確認後は削除推奨。
+bot.run(TOKEN)
 
 # インテントの設定（ボイス状態を検知するために必要）
 intents = discord.Intents.default()
@@ -26,8 +30,3 @@ async def on_voice_state_update(member, before, after):
         text_channel = discord.utils.get(member.guild.text_channels, name="bot通知")  # チャンネル名を指定
         if text_channel:
             await text_channel.send(f"@everyone {member.display_name} がボイスチャンネルに参加しました！")
-
-# ここに自分の Bot トークンを貼り付けてください（"..."の部分）
-TOKEN = os.getenv("DISCORD_TOKEN")
-print("TOKEN:", TOKEN)  # ← デバッグ用。動作確認後は削除推奨。
-bot.run(TOKEN)
