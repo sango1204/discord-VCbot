@@ -2,7 +2,8 @@
 import os
 from discord.ext import commands
 
-# 動作確認用 
+# 動作確認用
+client = discord.Client(intents=discord.Intents.default())
 print("OK")
 
 # インテントの設定（ボイス状態を検知するために必要）
