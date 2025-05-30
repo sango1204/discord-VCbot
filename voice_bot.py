@@ -15,12 +15,12 @@ intents.members = True  # メンバー情報も取得できるように
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Botがオンラインになったときに表示
-@bot.event
+@client.event
 async def on_ready():
     print(f"Bot is ready. Logged in as {bot.user}")
 
 # ボイスチャンネルの入室を検知
-@bot.event
+@client.event
 async def on_voice_state_update(member, before, after):
     if before.channel is None and after.channel is not None:
         # 入室したときの処理
