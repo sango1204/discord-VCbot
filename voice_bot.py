@@ -2,6 +2,9 @@
 import os
 from discord.ext import commands
 
+# 動作確認用 
+print("OK")
+
 # インテントの設定（ボイス状態を検知するために必要）
 intents = discord.Intents.default()
 intents.voice_states = True
