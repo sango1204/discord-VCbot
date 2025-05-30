@@ -28,5 +28,4 @@ async def on_voice_state_update(member, before, after):
             await text_channel.send(f"@everyone {member.display_name} がボイスチャンネルに参加しました！")
 
 # ここに自分の Bot トークンを貼り付けてください（"..."の部分）
-TOKEN = os.getenv("DISCORD_TOKEN")
-bot.run(TOKEN)
+bot.run("DISCORD_TOKEN")
