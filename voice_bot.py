@@ -30,5 +30,4 @@ async def on_voice_state_update(member, before, after):
 
 # ここに自分の Bot トークンを貼り付けてください（"..."の部分）
 TOKEN = os.getenv("DISCORD_TOKEN")
-print("TOKEN:", TOKEN)  # ← デバッグ用。動作確認後は削除推奨。
 client.run(TOKEN)
